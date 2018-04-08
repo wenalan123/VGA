@@ -1,0 +1,6 @@
+DATE = "14:25:13 April 08, 2018"
+QUARTUS_VERSION = "14.0"
+
+# Revisions
+
+PROJECT_REVISION = "vga_block"
