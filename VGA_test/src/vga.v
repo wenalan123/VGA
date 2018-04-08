@@ -23,7 +23,7 @@ module  vga(
 // ********** Define Parameter and Internal Signals *************
 //=====================================================================/
 //ADV7123 t输出延迟=t6+t8=7.5+15=22.5ns
-/* 640*480@60Hz fclk=25MHz,Tclk=40ns<22.5ns,所以数据不需要提前一个时钟输出,按正常时序即可
+/* 640*480@60Hz fclk=25MHz,Tclk=40ns,20ns>7.5ns,所以数据不需要提前一个时钟输出,按正常时序即可
 parameter   LinePeriod      =       800                         ;
 parameter   H_SyncPulse     =       96                          ;
 parameter   H_BackPorch     =       48                          ;
@@ -41,7 +41,7 @@ parameter   Vde_start       =       V_SyncPulse + V_BackPorch   ;
 parameter   Vde_end         =       Vde_start + V_ActivePix     ; 
 */
 
-// 1024*768@60Hz fclk=65MHz,Tclk=15.38ns<22.5ns,所以数据要提前一个时钟输出,从而使数据对齐
+// 1024*768@60Hz fclk=65MHz,Tclk=15.38ns,Tclk/2约等于7.5ns,所以数据要提前一个时钟输出,从而使数据对齐，具体是否需要提前移动一个时钟，还是以实际测试为准
 parameter   LinePeriod      =       1344                        ;
 parameter   H_SyncPulse     =       136                         ;
 parameter   H_BackPorch     =       160                         ;
